@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sport Analyzer — Pro UI</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Sport<span>Analyzer</span></h1>
+        <p class="subtitle">Умный прогнозатор — вводи пары участников (например "Барселона - Реал" или "Иванов - Петров, настольный теннис")</p>
+      </div>
+      <div class="controls">
+        <input id="inputMatch" placeholder="Введите команду/игрока1 - команду/игрока2, (необязательно: , футбол/хоккей/настольный теннис)" />
+        <button id="goBtn">Проанализировать</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <div class="card info">
+          <h3>Подсказки</h3>
+          <ul>
+            <li>Формат ввода: <code>Участник A - Участник B, [спорт]</code></li>
+            <li>Если спорт не указан — система попытается угадать (по умолчанию — футбол)</li>
+            <li>Для настольного тенниса указывай игроков (например: <em>Иванов - Петров, настольный теннис</em>)</li>
+            <li>Можно указывать короткие метрики после ввода в модальном окне</li>
+          </ul>
+        </div>
+
+        <div class="card example">
+          <h4>Примеры</h4>
+          <button class="preset" data-text="Барселона - Реал">Барселона - Реал</button>
+          <button class="preset" data-text="Динамо - Спартак, хоккей">Динамо - Спартак, хоккей</button>
+          <button class="preset" data-text="Иванов - Петров, настольный теннис">Иванов - Петров, настольный теннис</button>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <div id="resultArea" class="card result empty">
+          <h2>Результат</h2>
+          <div id="resultPretty" class="pretty">Нажми «Проанализировать», чтобы получить красивый анализ.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Готово к развёртыванию на GitHub Pages. Это демо-версия модели — для лучшей точности подключи реальные статистические API.</small>
+    </footer>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
